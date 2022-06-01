@@ -1,9 +1,17 @@
+// Components
+import Image from '../Image/Image';
+
 // Style
 import './ArtistBanner.css';
 
 // Element
-function ArtistBanner({ children }) {
-  return <div className="artistBanner">{children}</div>;
+function ArtistBanner({ img, artistName }) {
+  return (
+    <div className="artistBanner">
+      <Image src={img.src} alt={img.alt} />
+      <h3>{artistName}</h3>
+    </div>
+  );
 }
 
 export default ArtistBanner;

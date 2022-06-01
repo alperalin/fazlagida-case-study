@@ -1,10 +1,6 @@
 //Components
 import List from '../List/List';
 import ArtistCard from '../ArtistCard/ArtistCard';
-import Image from '../Image/Image';
-import ArtistName from '../ArtistName/ArtistName';
-import Listeners from '../Listeners/Listeners';
-import PlayCount from '../PlayCount/PlayCount';
 import ArtistBanner from '../ArtistBanner/ArtistBanner';
 import MediaCard from '../MediaCard/MediaCard';
 
@@ -15,26 +11,27 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <ArtistBanner>
-        <Image src="./logo192.png" alt="React Logo" />
-        <ArtistName />
-      </ArtistBanner>
+      <ArtistBanner
+        img={{ src: './logo192.png', alt: 'React Logo' }}
+        artistName="Kanye West"
+      />
 
       <List>
         <h2>Top Artists List</h2>
-        <ArtistCard>
-          <Image src="./logo192.png" alt="React Logo" />
-          <ArtistName />
-          <Listeners />
-          <PlayCount />
-        </ArtistCard>
+        <ArtistCard
+          img={{ src: './logo192.png', alt: 'React Logo' }}
+          artistName="Kanye West"
+          listeners="20000"
+          playCount="24444"
+        />
 
-        <MediaCard>
-          <Image src="./logo192.png" alt="React Logo" />
-          <ArtistName />
-          <Listeners />
-          <PlayCount />
-        </MediaCard>
+        <MediaCard
+          image="./logo192.png"
+          artistName="Kanye West"
+          mediaName="Stronger"
+          listeners="20000"
+          playCount="24444"
+        />
       </List>
     </div>
   );
