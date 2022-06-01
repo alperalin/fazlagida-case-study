@@ -8,7 +8,7 @@ import './ArtistBanner.scss';
 function ArtistBanner({ img, artistName }) {
   return (
     <div className="artistBanner">
-      <Image src={img.src} alt={img.alt} />
+      {/* <Image src={img.src} alt={img.alt} /> */}
       <h3>{artistName}</h3>
     </div>
   );

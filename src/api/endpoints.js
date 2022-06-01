@@ -2,7 +2,7 @@
 import api from './instance';
 
 // Get top artists
-function getTopArtists(pageNumber) {
+function getTopArtists(pageNumber = 1) {
   return api.get('', {
     params: {
       method: 'chart.gettopartists',

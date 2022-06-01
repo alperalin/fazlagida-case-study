@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { useAppContext } from '../../context/AppContext';
 
 // Components
 import Image from '../Image/Image';
@@ -8,10 +9,20 @@ import './App.scss';
 
 // Element
 function App() {
+  // context
+  const { dispatches } = useAppContext();
+
+  function handleThemeChange() {
+    dispatches.setTheme();
+  }
+
   return (
     <>
       <header className="app__header">
         <Image size="small" src="./logo192.png" alt="React Logo" />
+        <button type="button" onClick={handleThemeChange}>
+          Change Theme
+        </button>
       </header>
       <main className="app__main">
         <Outlet />

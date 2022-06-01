@@ -14,6 +14,7 @@ import App from './components/App/App';
 
 // Styles
 import './utils/GlobalStyles/style.scss';
+import { AppContextProvider } from './context/AppContext';
 
 // React Query
 const queryClient = new QueryClient({
@@ -28,17 +29,19 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          <Route element={<App />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/artists/:artistId" element={<ArtistDetailPage />} />
-            <Route path="*" element={<p>404! Nothing Found!</p>} />
-          </Route>
-        </Routes>
-      </Router>
-    </QueryClientProvider>
+    <AppContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Routes>
+            <Route element={<App />}>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/artists/:artistId" element={<ArtistDetailPage />} />
+              <Route path="*" element={<p>404! Nothing Found!</p>} />
+            </Route>
+          </Routes>
+        </Router>
+      </QueryClientProvider>
+    </AppContextProvider>
   </React.StrictMode>
 );
 
