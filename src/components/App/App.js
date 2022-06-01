@@ -11,7 +11,7 @@ import MediaCard from '../MediaCard/MediaCard';
 import './App.css';
 
 // API
-import getTopArtists from '../../api/endpoints/getTopArtists';
+import { getTopArtists } from '../../api/endpoints';
 
 // Element
 function App() {
