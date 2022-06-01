@@ -2,11 +2,11 @@
 import { useQuery } from 'react-query';
 
 //Components
-import List from '../List/List';
-import ArtistCard from '../ArtistCard/ArtistCard';
+import List from '../components/List/List';
+import ArtistCard from '../components/ArtistCard/ArtistCard';
 
 // API
-import { getTopArtists } from '../../api/endpoints';
+import { getTopArtists } from '../api/endpoints';
 
 function Homepage() {
   const { isLoading, error, data } = useQuery('topArtists', () =>
