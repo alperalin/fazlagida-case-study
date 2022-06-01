@@ -4,7 +4,7 @@ function ArtistCard({ image, artistName, listeners, playCount }) {
   return (
     <div className="artistCard">
       <div className="artistCard__info">
-        <Image src={image} alt={artistName} />
+        <Image src={image['#text']} alt={artistName} />
         <h3>{artistName}</h3>
       </div>
       <div className="artistCard__counts">
