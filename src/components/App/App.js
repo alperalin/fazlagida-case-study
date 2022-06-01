@@ -1,3 +1,6 @@
+// Imports
+import { useEffect, useState } from 'react';
+
 //Components
 import List from '../List/List';
 import ArtistCard from '../ArtistCard/ArtistCard';
@@ -7,8 +10,19 @@ import MediaCard from '../MediaCard/MediaCard';
 // Style
 import './App.css';
 
+// API
+import getTopArtists from '../../api/endpoints/getTopArtists';
+
 // Element
 function App() {
+  // const [topArtists, setTopArtists] = useState('');
+
+  // useEffect(() => {
+  //   getTopArtists(1)
+  //     .then((res) => setTopArtists(res.data))
+  //     .catch((error) => console.error);
+  // }, []);
+
   return (
     <div className="App">
       <ArtistBanner
