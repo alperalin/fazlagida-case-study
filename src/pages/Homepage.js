@@ -18,13 +18,13 @@ function Homepage() {
   if (error) return `An error has occurred: ${error.message}`;
 
   return (
-    <List>
-      <h2>Top Artists List</h2>
+    <List title="Top Artists List">
       {data.artists.artist.length > 0 &&
         data.artists.artist.map((artist) => (
           <ArtistCard
             key={artist.mbid}
-            image={artist.image[1]}
+            id={artist.mbid}
+            image={artist.image}
             artistName={artist.name}
             listeners={artist.listeners}
             playCount={artist.playcount}

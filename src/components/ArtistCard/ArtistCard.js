@@ -1,17 +1,29 @@
+// imports
+import { Link } from 'react-router-dom';
+
+// Components
 import Image from '../Image/Image';
 
-function ArtistCard({ image, artistName, listeners, playCount }) {
+// Style
+import './ArtistCard.scss';
+
+// Element
+function ArtistCard({ id, image, artistName, listeners, playCount }) {
   return (
-    <div className="artistCard">
+    <Link className="artistCard" to={`artists/${id}`}>
       <div className="artistCard__info">
-        <Image src={image['#text']} alt={artistName} />
+        <Image
+          size={image[1]['size']}
+          src={image[1]['#text']}
+          alt={artistName}
+        />
         <h3>{artistName}</h3>
       </div>
       <div className="artistCard__counts">
-        <span>{listeners} listeners</span>
-        <span>{playCount} play</span>
+        <span>listeners: {listeners}</span>
+        <span>play: {playCount}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 

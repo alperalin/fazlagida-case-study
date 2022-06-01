@@ -1,7 +1,16 @@
-import React from 'react';
+// Styles
+import './Image.scss';
 
-function Image({ src, alt, ...props }) {
-  return <img src={src} alt={alt} {...props} />;
+// Element
+function Image({ src, alt, size, ...props }) {
+  return (
+    <img
+      className={`image${size ? ` image-${size}` : ''}`}
+      src={src}
+      alt={alt}
+      {...props}
+    />
+  );
 }
 
 export default Image;

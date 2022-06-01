@@ -1,0 +1,15 @@
+@import '../../utils/GlobalStyles/variables.scss';
+
+.list {
+  max-width: 500px;
+  border: 1px solid $black;
+  padding: 15px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
+}

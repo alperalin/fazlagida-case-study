@@ -27,7 +27,7 @@ root.render(
         <Routes>
           <Route element={<App />}>
             <Route path="/" element={<Homepage />} />
-            <Route path="/artists/:artistName" element={<ArtistDetailPage />} />
+            <Route path="/artists/:artistId" element={<ArtistDetailPage />} />
             <Route path="*" element={<p>404! Nothing Found!</p>} />
           </Route>
         </Routes>

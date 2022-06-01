@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
 function ArtistDetailPage() {
-  const { artistName } = useParams();
+  const { artistId } = useParams();
 
-  return <div>{artistName}</div>;
+  return <div>{artistId}</div>;
 }
 
 export default ArtistDetailPage;

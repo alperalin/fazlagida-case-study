@@ -1,9 +1,12 @@
-import React from 'react';
+// Style
+import './List.scss';
 
-function List({ children }) {
+// Element
+function List({ title, children }) {
   return (
-    <div style={{ maxWidth: 500, border: '1px solid black', margin: '0 auto' }}>
-      {children}
+    <div className="list">
+      {title && <h2 className="list__title">{title}</h2>}
+      <div className="list__items">{children}</div>
     </div>
   );
 }
