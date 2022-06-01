@@ -3,9 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
-// Styles
-import './styles/index.css';
-
 // Components
 import App from './components/App/App';
 

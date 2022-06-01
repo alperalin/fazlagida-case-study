@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from '../../pages/Homepage';
 import ArtistDetailPage from '../../pages/ArtistDetailPage';
 
+// Components
+import Layout from '../Layout/Layout';
+
 // Style
 import './App.css';
 const queryClient = new QueryClient();
@@ -16,9 +19,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/artists/:artistName" element={<ArtistDetailPage />} />
-          <Route path="*" element={<p>404! Nothing Found!</p>} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/artists/:artistName" element={<ArtistDetailPage />} />
+            <Route path="*" element={<p>404! Nothing Found!</p>} />
+          </Route>
         </Routes>
       </Router>
     </QueryClientProvider>
