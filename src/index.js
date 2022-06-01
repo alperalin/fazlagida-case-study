@@ -16,7 +16,13 @@ import App from './components/App/App';
 import './utils/GlobalStyles/style.scss';
 
 // React Query
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 // Render
 const root = ReactDOM.createRoot(document.getElementById('root'));

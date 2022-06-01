@@ -12,6 +12,7 @@
   &__main {
     width: 100%;
     height: calc(100vh - 171px);
+    overflow: scroll;
   }
 
   &__footer {

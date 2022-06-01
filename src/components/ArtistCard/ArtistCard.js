@@ -17,6 +17,7 @@ function ArtistCard({ id, image, artistName, listeners, playCount }) {
           src={image[1]['#text']}
           alt={artistName}
         />
+        <span>Artist</span>
         <h3>{artistName}</h3>
       </div>
       <div className="artistCard__counts">

@@ -2,7 +2,7 @@
 import Image from '../Image/Image';
 
 // Style
-import './ArtistBanner.css';
+import './ArtistBanner.scss';
 
 // Element
 function ArtistBanner({ img, artistName }) {

@@ -4,12 +4,16 @@ function MediaCard({ image, mediaName, artistName, listeners, playCount }) {
   return (
     <div className="mediaCard">
       <div className="mediaCard__info">
-        <Image src={image} alt={mediaName} />
+        <Image
+          size={image[1]['size']}
+          src={image[1]['#text']}
+          alt={mediaName}
+        />
         <h3>{mediaName}</h3>
         <span>{artistName}</span>
       </div>
       <div className="mediaCard__counts">
-        <span>{listeners} listeners</span>
+        {listeners && <span>{listeners} listeners</span>}
         {playCount && <span>{playCount} play</span>}
       </div>
     </div>

@@ -8,14 +8,15 @@ import ArtistCard from '../components/ArtistCard/ArtistCard';
 // API
 import { getTopArtists } from '../api/endpoints';
 
+// Page
 function Homepage() {
-  const { isLoading, error, data } = useQuery('topArtists', () =>
+  const { isLoading, isError, data, error } = useQuery('topArtists', () =>
     getTopArtists(1).then((res) => res.data)
   );
 
-  if (isLoading) return 'Loading...';
+  if (isLoading) return <span>Loading...</span>;
 
-  if (error) return `An error has occurred: ${error.message}`;
+  if (isError) return <span>{`An error has occurred: ${error.message}`}</span>;
 
   return (
     <List title="Top Artists List">
