@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Pages
@@ -14,7 +15,6 @@ import App from './components/App/App';
 
 // Styles
 import './utils/GlobalStyles/style.scss';
-import { AppContextProvider } from './context/AppContext';
 
 // React Query
 const queryClient = new QueryClient({
@@ -29,19 +29,18 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppContextProvider>
-      <QueryClientProvider client={queryClient}>
-        <Router>
-          <Routes>
-            <Route element={<App />}>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/artists/:artistId" element={<ArtistDetailPage />} />
-              <Route path="*" element={<p>404! Nothing Found!</p>} />
-            </Route>
-          </Routes>
-        </Router>
-      </QueryClientProvider>
-    </AppContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Routes>
+          <Route element={<App />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/artists/:artistUrl" element={<ArtistDetailPage />} />
+            <Route path="*" element={<p>404! Nothing Found!</p>} />
+          </Route>
+        </Routes>
+        <ReactQueryDevtools initialIsOpen />
+      </Router>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

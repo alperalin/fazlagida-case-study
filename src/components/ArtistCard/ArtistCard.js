@@ -1,6 +1,5 @@
 // imports
-import { Link, useNavigate } from 'react-router-dom';
-import { useAppContext } from '../../context/AppContext';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 
 // Components
 import Image from '../Image/Image';
@@ -10,21 +9,22 @@ import './ArtistCard.scss';
 
 // Element
 function ArtistCard({ id, image, artistName, listeners, playCount }) {
-  const { dispatches } = useAppContext();
+  const [currentArtist, setCurrentArtist] = useOutletContext();
+
   const navigate = useNavigate();
 
   function handleClick(event, id, artistName, image) {
     event.preventDefault();
     const address = event.currentTarget.pathname;
-    dispatches.setCurrentArtist({ id, artistName, image });
+    setCurrentArtist({ id, artistName, image });
     navigate(address);
   }
 
   return (
     <Link
       className="artistCard"
+      to={`artists/${encodeURI(artistName)}`}
       onClick={(e) => handleClick(e, id, artistName, image)}
-      to={`artists/${id}`}
     >
       <div className="artistCard__info">
         <Image

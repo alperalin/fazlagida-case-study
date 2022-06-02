@@ -12,21 +12,21 @@ function getTopArtists(pageParam = 1) {
 }
 
 // Get top albums of an artist
-function getTopAlbums(artistId) {
+function getTopAlbums(artistName) {
   return api.get('', {
     params: {
       method: 'artist.gettopalbums',
-      mbid: artistId,
+      artist: artistName,
     },
   });
 }
 
 // Get top tracks of an artist
-function getTopTracks(artistId) {
+function getTopTracks(artistName) {
   return api.get('', {
     params: {
       method: 'artist.gettoptracks',
-      mbid: artistId,
+      artist: artistName,
     },
   });
 }
