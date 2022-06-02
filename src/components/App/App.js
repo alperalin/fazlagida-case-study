@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <>
+    <section className="app">
       <header className="app__header">
         <Image size="small" src="./logo192.png" alt="React Logo" />
         <button type="button" onClick={handleThemeChange}>
@@ -27,10 +27,10 @@ function App() {
       <main className="app__main">
         <Outlet />
       </main>
-      <footer className="app__footer">
+      {/* <footer className="app__footer">
         <span>@2022 - Made by Alper ALIN</span>
-      </footer>
-    </>
+      </footer> */}
+    </section>
   );
 }
 

@@ -7,7 +7,7 @@ const api = axios.create({
   baseURL: 'https://ws.audioscrobbler.com/2.0/',
   params: {
     api_key: process.env.REACT_APP_API_KEY,
-    limit: 5,
+    limit: 10,
     format: 'json',
   },
 });
