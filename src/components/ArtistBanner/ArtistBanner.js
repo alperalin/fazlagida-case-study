@@ -5,10 +5,10 @@ import Image from '../Image/Image';
 import './ArtistBanner.scss';
 
 // Element
-function ArtistBanner({ img, artistName }) {
+function ArtistBanner({ imageSrc, imageSize, artistName }) {
   return (
     <div className="artistBanner">
-      {/* <Image src={img.src} alt={img.alt} /> */}
+      <Image size={imageSize} src={imageSrc} alt={artistName} />
       <h3>{artistName}</h3>
     </div>
   );

@@ -1,5 +1,7 @@
+// Imports
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
+import { useAppContext } from '../context/AppContext';
 
 //Components
 import List from '../components/List/List';
@@ -12,6 +14,7 @@ import { getTopAlbums, getTopTracks } from '../api/endpoints';
 // Page
 function ArtistDetailPage() {
   const { artistId } = useParams();
+  const { state } = useAppContext();
 
   const {
     isLoading: taIsLoading,
@@ -38,13 +41,17 @@ function ArtistDetailPage() {
 
   return (
     <div>
-      <ArtistBanner />
+      <ArtistBanner
+        imageSize={state?.currentArtist?.image[2]['size']}
+        imageSrc={state?.currentArtist?.image[2]['#text']}
+        artistName={state?.currentArtist?.artistName}
+      />
 
       <List title="Top Albums">
         {taData?.data?.topalbums.album.length > 0 &&
-          taData.data.topalbums.album.map((album) => (
+          taData.data.topalbums.album.map((album, index) => (
             <MediaCard
-              key={album.name}
+              key={index}
               image={album.image}
               mediaName={album.name}
               artistName={album.artist.name}
