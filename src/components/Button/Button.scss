@@ -9,9 +9,9 @@
   line-height: normal;
   color: $buttonTextColor;
   text-align: center;
-  border: 1px solid $buttonBorderColor;
-  border-radius: 4px;
-  padding: 5px 12px;
+  border: 1px solid $buttonBgColor;
+  border-radius: $borderRadius;
+  padding: 8px 12px;
   cursor: pointer;
   transition: all 500ms ease;
   &[disabled] {
@@ -21,7 +21,17 @@
     cursor: default;
   }
 
+  &:hover {
+    border-color: $buttonBgColorHover;
+    background-color: $buttonBgColorHover;
+  }
+
   &--outlined {
+    color: $buttonOutlinedTextColor;
     background-color: $white;
+
+    &:hover {
+      background-color: $white;
+    }
   }
 }

@@ -53,13 +53,16 @@ function Homepage() {
     }
   );
 
+  // When user scroll to end of page
+  // New artists content will fetch
   useEffect(() => {
     if (inView) fetchNextPage();
   }, [inView]);
 
   // Return
-  if (status === 'loading') return <span>Loading...</span>;
+  if (status === 'loading') return <Spinner />;
 
+  // Error
   if (status === 'error')
     return <span>{`An error has occurred: ${error.message}`}</span>;
 
