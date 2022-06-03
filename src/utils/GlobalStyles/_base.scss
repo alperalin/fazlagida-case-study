@@ -44,3 +44,14 @@ picture {
   height: auto;
   vertical-align: middle;
 }
+
+/*--------------------------------------------------------------
+### Container
+--------------------------------------------------------------*/
+.container {
+  position: relative;
+  max-width: $container-width;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}

@@ -1,0 +1,49 @@
+@import '../../utils/globalStyles/_variables.scss';
+
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+
+  &__icon {
+    margin: 0 5px 0 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    min-width: 110px;
+    text-align: right;
+  }
+
+  // In Dark Theme
+  .dark & {
+    &__icon {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  @media screen and (max-width: $sm-max) {
+    font-size: 12px;
+
+    &__icon {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__text {
+      min-width: 80px;
+    }
+  }
+}

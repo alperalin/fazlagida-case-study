@@ -1,10 +1,10 @@
-@import '../../utils/GlobalStyles/variables.scss';
+@import '../../utils/globalStyles/variables.scss';
 
 .spinner {
   position: relative;
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   text-indent: -9999em;
   margin: 0 auto;
   overflow: hidden;

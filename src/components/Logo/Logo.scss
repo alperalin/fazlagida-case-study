@@ -1,0 +1,37 @@
+@import '../../utils/globalStyles/variables.scss';
+
+.logo {
+  padding: 10px;
+
+  &__icon {
+    fill: $lighterBlack;
+  }
+
+  &__url {
+    color: $white;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  // In Dark Theme
+  .dark & {
+    &__icon {
+      fill: $white;
+    }
+
+    &__text {
+      color: $white;
+    }
+  }
+}

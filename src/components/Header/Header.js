@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 // Components
-import Image from '../Image/Image';
+import Logo from '../Logo/Logo';
 
 // Styles
 import './Header.scss';
@@ -16,10 +16,18 @@ function Header({ onSetTheme }) {
   // Return
   return (
     <header className="header">
-      <Image size="small" src="./logo192.png" alt="React Logo" />
-      <button type="button" onClick={handleThemeChange}>
-        Change Theme
-      </button>
+      <div className="container">
+        <div className="row middle-xs">
+          <div className="header__left col-md-5 col-md-offset-1 col-xs-6">
+            <Logo />
+          </div>
+          <div className="header__right col-md-5 col-xs-6">
+            <button type="button" onClick={handleThemeChange}>
+              Change Theme
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

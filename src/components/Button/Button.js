@@ -11,12 +11,21 @@ import './Button.scss';
 // Element
 const Button = forwardRef(
   (
-    { children, variant = 'contained', type, isLoading = false, onClick },
+    {
+      children,
+      variant = 'contained',
+      alignCenter,
+      type,
+      isLoading = false,
+      onClick,
+    },
     ref
   ) => (
     <button
       ref={ref}
-      className={`button button--${variant} ${type ? 'button--loading' : ''}`}
+      className={`button ${
+        alignCenter && 'button--center'
+      } button--${variant} ${type ? 'button--loading' : ''}`}
       disabled={isLoading}
       onClick={onClick}
     >
@@ -28,6 +37,7 @@ const Button = forwardRef(
 Button.propTypes = {
   children: PropTypes.node,
   variant: PropTypes.oneOf(['contained', 'outlined']),
+  alignCenter: PropTypes.bool,
   type: PropTypes.oneOf(['loading']),
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,

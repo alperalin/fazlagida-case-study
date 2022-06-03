@@ -1,8 +1,9 @@
-@import '../../utils/GlobalStyles/variables.scss';
+@import '../../utils/globalStyles/variables.scss';
 
 .button {
   display: block;
   width: auto;
+  min-width: 120px;
   background-color: $buttonBgColor;
   font-size: 16px;
   font-weight: 400;
@@ -24,6 +25,10 @@
   &:hover {
     border-color: $buttonBgColorHover;
     background-color: $buttonBgColorHover;
+  }
+
+  &--center {
+    margin: 15px auto 0 auto;
   }
 
   &--outlined {

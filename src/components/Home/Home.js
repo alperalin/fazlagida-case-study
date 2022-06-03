@@ -5,16 +5,16 @@ import { useInView } from 'react-intersection-observer';
 import { uniqWith, isEqual } from 'lodash';
 
 //Components
-import List from '../components/List/List';
-import ArtistCard from '../components/ArtistCard/ArtistCard';
-import Button from '../components/Button/Button';
+import List from '../List/List';
+import ArtistCard from '../ArtistCard/ArtistCard';
+import Button from '../Button/Button';
 
 // API
-import { getTopArtists } from '../api/endpoints';
-import Spinner from '../components/Spinner/Spinner';
+import { getTopArtists } from '../../api/endpoints';
+import Spinner from '../Spinner/Spinner';
 
 // Page
-function Homepage() {
+function Home() {
   // Inview
   const { ref, inView } = useInView({
     trackVisibility: true,
@@ -68,32 +68,37 @@ function Homepage() {
 
   return (
     <>
-      <List title="Top Artists List">
-        {data?.pages.map((artist, i) => (
-          <Fragment key={i}>
-            <ArtistCard
-              key={artist.mbid}
-              id={artist.mbid}
-              imageSrc={artist?.image[1]['#text']}
-              imageSize="small"
-              artistName={artist.name}
-              listeners={artist.listeners}
-              playCount={artist.playcount}
-            />
-          </Fragment>
-        ))}
-      </List>
-      <Button
-        ref={ref}
-        type="loading"
-        variant="contained"
-        isLoading={isFetchingNextPage}
-        onClick={fetchNextPage}
-      >
-        {hasNextPage ? 'Load More Artists' : 'Nothing to show'}
-      </Button>
+      <div className="col-md-2"></div>
+      <div className="home col-md-8 col-xs-12">
+        <List title="Top Artists List">
+          {data?.pages.map((artist, i) => (
+            <Fragment key={i}>
+              <ArtistCard
+                key={artist.mbid}
+                id={artist.mbid}
+                imageSrc={artist?.image[1]['#text']}
+                imageSize="small"
+                artistName={artist.name}
+                listenersCount={artist.listeners}
+                playCount={artist.playcount}
+              />
+            </Fragment>
+          ))}
+        </List>
+        <Button
+          ref={ref}
+          variant="contained"
+          alignCenter={true}
+          type="loading"
+          isLoading={isFetchingNextPage}
+          onClick={fetchNextPage}
+        >
+          {hasNextPage ? 'Load More Artists' : 'Nothing to show'}
+        </Button>
+      </div>
+      <div className="col-md-2"></div>
     </>
   );
 }
 
-export default Homepage;
+export default Home;

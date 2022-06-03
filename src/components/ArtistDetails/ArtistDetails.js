@@ -3,15 +3,15 @@ import { useParams, useOutletContext } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 //Components
-import List from '../components/List/List';
-import ArtistBanner from '../components/ArtistBanner/ArtistBanner';
-import MediaCard from '../components/MediaCard/MediaCard';
+import List from '../List/List';
+import ArtistBanner from '../ArtistBanner/ArtistBanner';
+import MediaCard from '../MediaCard/MediaCard';
 
 // API
-import { getTopAlbums, getTopTracks } from '../api/endpoints';
+import { getTopAlbums, getTopTracks } from '../../api/endpoints';
 
 // Page
-function ArtistDetailPage() {
+function ArtistDetails() {
   const { artistUrl } = useParams();
   const [currentArtist, setCurrentArtist] = useOutletContext();
 
@@ -81,4 +81,4 @@ function ArtistDetailPage() {
   );
 }
 
-export default ArtistDetailPage;
+export default ArtistDetails;

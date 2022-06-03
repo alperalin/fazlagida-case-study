@@ -13,9 +13,10 @@ function App() {
   const prefersLightMQ = '(prefers-color-scheme: light)';
 
   const [theme, setTheme] = useState(
-    window.matchMedia(prefersLightMQ).matches
+    window.localStorage.getItem('theme') ||
+      window.matchMedia(prefersLightMQ).matches
       ? 'light'
-      : 'dark' || window.localStorage.getItem('theme') || 'light'
+      : 'dark' || 'light'
   );
 
   const [currentArtist, setCurrentArtist] = useState(
@@ -53,15 +54,19 @@ function App() {
 
   // APP
   return (
-    <section className="app">
+    <div className="app">
       <Header onSetTheme={setTheme} />
       <main className="app__main">
-        <Outlet context={[currentArtist, setCurrentArtist]} />
+        <div className="container">
+          <div className="row">
+            <Outlet context={[currentArtist, setCurrentArtist]} />
+          </div>
+        </div>
       </main>
       {/* <footer className="app__footer">
         <span>@2022 - Made by Alper ALIN</span>
       </footer> */}
-    </section>
+    </div>
   );
 }
 

@@ -7,14 +7,14 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Pages
-import Homepage from './pages/Homepage';
-import ArtistDetailPage from './pages/ArtistDetailPage';
+import Home from './components/Home/Home';
+import ArtistDetails from './components/ArtistDetails/ArtistDetails';
 
 // Components
 import App from './components/App/App';
 
 // Styles
-import './utils/GlobalStyles/style.scss';
+import './utils/globalStyles/style.scss';
 
 // React Query
 const queryClient = new QueryClient({
@@ -33,8 +33,8 @@ root.render(
       <Router>
         <Routes>
           <Route element={<App />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/artists/:artistUrl" element={<ArtistDetailPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/artists/:artistUrl" element={<ArtistDetails />} />
             <Route path="*" element={<p>404! Nothing Found!</p>} />
           </Route>
         </Routes>
