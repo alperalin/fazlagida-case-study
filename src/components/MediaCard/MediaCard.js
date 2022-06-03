@@ -1,12 +1,17 @@
+// Components
 import Image from '../Image/Image';
 
+// Placeholder image
+import placeholderImage from '../../utils/images/placeholder.png';
+
+// Element
 function MediaCard({ image, mediaName, artistName, listeners, playCount }) {
   return (
     <div className="mediaCard">
       <div className="mediaCard__info">
         <Image
-          size={image[1]['size']}
-          src={image[1]['#text']}
+          size="medium"
+          src={image ? image[1]['#text'] : placeholderImage}
           alt={mediaName}
         />
         <h3>{mediaName}</h3>

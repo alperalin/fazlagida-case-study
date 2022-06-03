@@ -69,7 +69,8 @@ function Homepage() {
             <ArtistCard
               key={artist.mbid}
               id={artist.mbid}
-              image={artist.image}
+              imageSrc={artist?.image[1]['#text']}
+              imageSize="small"
               artistName={artist.name}
               listeners={artist.listeners}
               playCount={artist.playcount}

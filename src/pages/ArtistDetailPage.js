@@ -48,9 +48,8 @@ function ArtistDetailPage() {
       }}
     >
       <ArtistBanner
-        imageSize={currentArtist?.image[2]['size']}
-        imageSrc={currentArtist?.image[2]['#text']}
-        artistName={currentArtist?.artistName}
+        image={currentArtist && currentArtist?.image}
+        artistName={currentArtist?.artistName || decodeURI(artistUrl)}
       />
 
       <List title="Top Albums">

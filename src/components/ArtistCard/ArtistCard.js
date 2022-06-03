@@ -7,6 +7,9 @@ import Image from '../Image/Image';
 // Style
 import './ArtistCard.scss';
 
+// Placeholder image
+import placeholderImage from '../../utils/images/placeholder.png';
+
 // Element
 function ArtistCard({ id, image, artistName, listeners, playCount }) {
   const [currentArtist, setCurrentArtist] = useOutletContext();
@@ -21,15 +24,11 @@ function ArtistCard({ id, image, artistName, listeners, playCount }) {
   }
 
   return (
-    <Link
-      className="artistCard"
-      to={`artists/${encodeURI(artistName)}`}
-      onClick={(e) => handleClick(e, id, artistName, image)}
-    >
+    <div className="artistCard">
       <div className="artistCard__info">
         <Image
-          size={image[1]['size']}
-          src={image[1]['#text']}
+          size="medium"
+          src={image ? image[1]['#text'] : placeholderImage}
           alt={artistName}
         />
         <span>Artist</span>
@@ -39,7 +38,12 @@ function ArtistCard({ id, image, artistName, listeners, playCount }) {
         <span>listeners: {listeners}</span>
         <span>play: {playCount}</span>
       </div>
-    </Link>
+      <Link
+        className="artistCard"
+        to={`artists/${encodeURI(artistName)}`}
+        onClick={(e) => handleClick(e, id, artistName, image)}
+      ></Link>
+    </div>
   );
 }
 
