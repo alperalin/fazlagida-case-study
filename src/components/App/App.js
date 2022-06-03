@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <section className="app">
+    <section className={`app${theme === 'dark' && ' app--dark'}`}>
       <header className="app__header">
         <Image size="small" src="./logo192.png" alt="React Logo" />
         <button type="button" onClick={handleThemeChange}>
