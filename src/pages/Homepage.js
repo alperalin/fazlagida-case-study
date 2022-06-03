@@ -1,4 +1,5 @@
 // Imports
+import { useEffect, Fragment } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { useInView } from 'react-intersection-observer';
 import { uniqWith, isEqual } from 'lodash';
@@ -6,10 +7,11 @@ import { uniqWith, isEqual } from 'lodash';
 //Components
 import List from '../components/List/List';
 import ArtistCard from '../components/ArtistCard/ArtistCard';
+import Button from '../components/Button/Button';
 
 // API
 import { getTopArtists } from '../api/endpoints';
-import { useEffect, Fragment } from 'react';
+import Spinner from '../components/Spinner/Spinner';
 
 // Page
 function Homepage() {
@@ -78,17 +80,15 @@ function Homepage() {
           </Fragment>
         ))}
       </List>
-      <button
+      <Button
         ref={ref}
-        onClick={() => fetchNextPage()}
-        style={{ padding: 15, margin: '15px auto 0 auto' }}
+        type="loading"
+        variant="contained"
+        isLoading={isFetchingNextPage}
+        onClick={fetchNextPage}
       >
-        {isFetchingNextPage
-          ? 'Loading More...'
-          : hasNextPage
-          ? 'Load Newer'
-          : 'Nothing to show'}
-      </button>
+        {hasNextPage ? 'Load More Artists' : 'Nothing to show'}
+      </Button>
     </>
   );
 }

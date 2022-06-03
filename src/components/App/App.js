@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Components
-import Image from '../Image/Image';
+import Header from '../Header/Header';
 
 // Style
 import './App.scss';
@@ -51,20 +51,10 @@ function App() {
     window.localStorage.setItem('currentArtist', JSON.stringify(currentArtist));
   }, [currentArtist]);
 
-  // Functions
-  function handleThemeChange() {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  }
-
   // APP
   return (
     <section className="app">
-      <header className="app__header">
-        <Image size="small" src="./logo192.png" alt="React Logo" />
-        <button type="button" onClick={handleThemeChange}>
-          Change Theme
-        </button>
-      </header>
+      <Header onSetTheme={setTheme} />
       <main className="app__main">
         <Outlet context={[currentArtist, setCurrentArtist]} />
       </main>

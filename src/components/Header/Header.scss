@@ -1,0 +1,14 @@
+@import '../../utils/GlobalStyles/variables.scss';
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid $lighterBlack;
+  transition: border-color 500ms ease;
+
+  .dark & {
+    border-color: $white;
+  }
+}
