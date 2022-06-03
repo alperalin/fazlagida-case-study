@@ -1,7 +1,9 @@
+// Imports
 import PropTypes from 'prop-types';
 
 // Components
 import Logo from '../Logo/Logo';
+import ThemeButton from '../ThemeButton/ThemeButton';
 
 // Styles
 import './Header.scss';
@@ -22,9 +24,10 @@ function Header({ onSetTheme }) {
             <Logo />
           </div>
           <div className="header__right col-md-5 col-xs-6">
-            <button type="button" onClick={handleThemeChange}>
+            {/* <button type="button" onClick={handleThemeChange}>
               Change Theme
-            </button>
+            </button> */}
+            <ThemeButton onClick={handleThemeChange} />
           </div>
         </div>
       </div>
