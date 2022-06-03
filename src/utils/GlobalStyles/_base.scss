@@ -10,9 +10,10 @@
 /*--------------------------------------------------------------
 ### HTML & Body
 --------------------------------------------------------------*/
-html,
 body {
-  background: $white;
+  max-width: 100%;
+  width: 100%;
+  background-color: $white;
   font-family: $fontFamily;
   font-size: $fontSizeBase;
   line-height: $LineHeightBase;
@@ -21,17 +22,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  max-width: 100%;
-  width: 100%;
-  background-color: $white;
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0 auto;
+  overflow-x: hidden;
+  transition: background-color 500ms ease;
+
+  &.dark {
+    background-color: $lighterBlack;
+    color: $white;
+  }
 }
 
 /*--------------------------------------------------------------

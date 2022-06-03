@@ -5,11 +5,16 @@
   border: 1px solid $black;
   padding: 15px;
   margin: 0 auto;
+  transition: border-color 500ms ease;
 
   &__title {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
     margin: 0 0 15px 0;
+  }
+
+  .dark & {
+    border-color: $white;
   }
 }
