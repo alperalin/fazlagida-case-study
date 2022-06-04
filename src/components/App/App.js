@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 // Components
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 // Style
 import './App.scss';
@@ -63,9 +64,7 @@ function App() {
           </div>
         </div>
       </main>
-      {/* <footer className="app__footer">
-        <span>@2022 - Made by Alper ALIN</span>
-      </footer> */}
+      <Footer text="@2022 - Made by Alper ALIN" />
     </div>
   );
 }

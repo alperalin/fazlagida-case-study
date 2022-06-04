@@ -1,4 +1,4 @@
-@import '../../utils/globalStyles/variables.scss';
+@import '../../utils/globalStyles/_variables.scss';
 
 .app {
   display: flex;
@@ -11,16 +11,6 @@
   &__main {
     width: 100%;
     margin: 15px 0;
-    transition: all 500ms ease;
-  }
-
-  &__footer {
-    width: 100%;
-    font-size: 14px;
-    color: $white;
-    text-align: center;
-    padding: 15px;
-    margin: auto 0 0 0;
     transition: all 500ms ease;
   }
 }

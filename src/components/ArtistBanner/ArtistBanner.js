@@ -13,10 +13,11 @@ function ArtistBanner({ image, artistName = '' }) {
     <div className="artistBanner">
       <Image
         size="large"
+        className="artistBanner__image"
         src={image ? image[2]['#text'] : placeholderImage}
         alt={artistName}
       />
-      <h3>{artistName}</h3>
+      <h2 className="artistBanner__name">{artistName}</h2>
     </div>
   );
 }

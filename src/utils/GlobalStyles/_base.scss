@@ -27,7 +27,7 @@ body {
   transition: background-color 500ms ease;
 
   &.dark {
-    background-color: $lighterBlack;
+    background-color: $lightBlack;
     color: $white;
   }
 }

@@ -32,7 +32,7 @@ function Logo() {
             </g>
           </g>
         </svg>
-        <span className="logo__text">Music App</span>
+        <h1 className="logo__text">Music App</h1>
       </Link>
     </div>
   );

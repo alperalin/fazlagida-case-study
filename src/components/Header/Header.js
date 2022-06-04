@@ -20,13 +20,10 @@ function Header({ onSetTheme }) {
     <header className="header">
       <div className="container">
         <div className="row middle-xs">
-          <div className="header__left col-md-5 col-md-offset-1 col-xs-6">
+          <div className="header__left col-xs-6">
             <Logo />
           </div>
-          <div className="header__right col-md-5 col-xs-6">
-            {/* <button type="button" onClick={handleThemeChange}>
-              Change Theme
-            </button> */}
+          <div className="header__right col-xs-6">
             <ThemeButton onClick={handleThemeChange} />
           </div>
         </div>

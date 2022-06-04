@@ -1,6 +1,35 @@
+@import '../../utils/globalStyles/_variables.scss';
+
 .artistBanner {
-  max-width: 500px;
-  border: 1px solid black;
-  padding: 10px;
-  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  background-color: $beige;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 50px;
+
+  &__image {
+    margin-right: 24px;
+  }
+
+  &__name {
+    font-size: 28px;
+    font-weight: 700;
+    .dark & {
+      color: $black;
+    }
+  }
+
+  @media screen and (max-width: $sm-max) {
+    margin-bottom: 25px;
+
+    &__image {
+      margin-right: 16px;
+    }
+
+    &__name {
+      font-size: 24px;
+    }
+  }
 }

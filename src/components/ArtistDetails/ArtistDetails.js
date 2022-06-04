@@ -6,6 +6,7 @@ import { useQuery } from 'react-query';
 import List from '../List/List';
 import ArtistBanner from '../ArtistBanner/ArtistBanner';
 import MediaCard from '../MediaCard/MediaCard';
+import Spinner from '../Spinner/Spinner';
 
 // API
 import { getTopAlbums, getTopTracks } from '../../api/endpoints';
@@ -30,7 +31,7 @@ function ArtistDetails() {
     error: ttError,
   } = useQuery('artistsTopTracks', () => getTopTracks(decodeURI(artistUrl)));
 
-  if (taIsLoading || ttIsLoading) return <span>Loading...</span>;
+  if (taIsLoading || ttIsLoading) return <Spinner />;
 
   if (taIsError || ttIsError)
     return (
@@ -40,44 +41,44 @@ function ArtistDetails() {
     );
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-      }}
-    >
-      <ArtistBanner
-        image={currentArtist && currentArtist?.image}
-        artistName={currentArtist?.artistName || decodeURI(artistUrl)}
-      />
+    <>
+      <div className="col-xs-12">
+        <ArtistBanner
+          image={currentArtist && currentArtist?.image}
+          artistName={currentArtist?.artistName || decodeURI(artistUrl)}
+        />
+      </div>
 
-      <List title="Top Albums">
-        {taData?.data?.topalbums.album.length > 0 &&
-          taData.data.topalbums.album.map((album, index) => (
-            <MediaCard
-              key={index}
-              image={album.image}
-              mediaName={album.name}
-              artistName={album.artist.name}
-              playCount={album.playcount}
-            />
-          ))}
-      </List>
-      <List title="Top Tracks">
-        {ttData?.data?.toptracks.track.length > 0 &&
-          ttData.data.toptracks.track.map((track, index) => (
-            <MediaCard
-              key={index}
-              image={track.image}
-              mediaName={track.name}
-              artistName={track.artist.name}
-              listeners={track.listeners}
-              playCount={track.playcount}
-            />
-          ))}
-      </List>
-    </div>
+      <div className="col-md-6 col-xs-12">
+        <List title="Top Albums">
+          {taData?.data?.topalbums.album.length > 0 &&
+            taData.data.topalbums.album.map((album, index) => (
+              <MediaCard
+                key={index}
+                image={album.image}
+                mediaName={album.name}
+                artistName={album.artist.name}
+                playCount={album.playcount}
+              />
+            ))}
+        </List>
+      </div>
+      <div className="col-md-6 col-xs-12">
+        <List title="Top Tracks">
+          {ttData?.data?.toptracks.track.length > 0 &&
+            ttData.data.toptracks.track.map((track, index) => (
+              <MediaCard
+                key={index}
+                image={track.image}
+                mediaName={track.name}
+                artistName={track.artist.name}
+                listenersCount={track.listeners}
+                playCount={track.playcount}
+              />
+            ))}
+        </List>
+      </div>
+    </>
   );
 }
 

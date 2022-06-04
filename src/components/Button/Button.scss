@@ -4,27 +4,27 @@
   display: block;
   width: auto;
   min-width: 120px;
-  background-color: $buttonBgColor;
+  background-color: $lightCobaltBlue;
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
   color: $buttonTextColor;
   text-align: center;
-  border: 1px solid $buttonBgColor;
+  border: 1px solid $lightCobaltBlue;
   border-radius: $borderRadius;
   padding: 8px 12px;
   cursor: pointer;
   transition: all 500ms ease;
   &[disabled] {
-    border-color: $buttonBorderColorDisabled;
+    border-color: $lighterBlack;
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
   }
 
   &:hover {
-    border-color: $buttonBgColorHover;
-    background-color: $buttonBgColorHover;
+    border-color: $middleBluePurple;
+    background-color: $middleBluePurple;
   }
 
   &--center {

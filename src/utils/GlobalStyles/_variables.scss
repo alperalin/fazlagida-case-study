@@ -7,19 +7,21 @@ $fontWeightBase: 400 !default;
 
 // Colors
 $black: #000000;
-$lighterBlack: #1f2028;
+$lightBlack: #1f2028;
+$lighterBlack: rgba(0, 0, 0, 0.2);
 $white: #ffffff;
-$buttonBgColor: #99a9e8;
-$buttonBgColorHover: #8f73bf;
+$lightCobaltBlue: #99a9e8;
+$middleBluePurple: #8f73bf;
 $buttonTextColor: $white;
 $buttonOutlinedTextColor: $black;
-$buttonBorderColorDisabled: rgba(0, 0, 0, 0.2);
-$spinnerBorderColor: #f5f0da;
-$borderRadius: 4px;
+$beige: #f5f0da;
 $cardBgColor: #fcfaf7;
 $cardBgColorDark: #261919;
 $cardBorderColor: rgba(0, 0, 0, 0.15);
-$metallicColor: #c0c0c3;
+$silverSand: #c0c0c3;
+
+// Border
+$borderRadius: 4px;
 
 // Grid Variables
 $grid-columns: 12 !default; // Set number of columns in the grid

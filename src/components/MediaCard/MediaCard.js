@@ -1,25 +1,40 @@
 // Components
 import Image from '../Image/Image';
+import Counts from '../Counts/Counts';
+
+// Style
+import './MediaCard.scss';
 
 // Placeholder image
 import placeholderImage from '../../utils/images/placeholder.png';
 
 // Element
-function MediaCard({ image, mediaName, artistName, listeners, playCount }) {
+function MediaCard({
+  image,
+  mediaName,
+  artistName,
+  listenersCount,
+  playCount,
+}) {
   return (
     <div className="mediaCard">
-      <div className="mediaCard__info">
+      <div className="mediaCard__info col-xs-6">
         <Image
+          className="mediaCard__image"
           size="medium"
           src={image ? image[1]['#text'] : placeholderImage}
           alt={mediaName}
         />
-        <h3>{mediaName}</h3>
-        <span>{artistName}</span>
+        <div className="mediaCard__name-container">
+          <h3 className="mediaCard__name">{mediaName}</h3>
+          <span className="mediaCard__title">{artistName}</span>
+        </div>
       </div>
-      <div className="mediaCard__counts">
-        {listeners && <span>{listeners} listeners</span>}
-        {playCount && <span>{playCount} play</span>}
+      <div className="mediaCard__counts col-xs-6">
+        {listenersCount && (
+          <Counts type="listeners" count={parseInt(listenersCount)} />
+        )}
+        {playCount && <Counts type="playCount" count={parseInt(playCount)} />}
       </div>
     </div>
   );
