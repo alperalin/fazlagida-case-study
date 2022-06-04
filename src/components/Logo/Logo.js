@@ -1,11 +1,12 @@
 // Imports
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // Styles
 import './Logo.scss';
 
 // Element
-function Logo() {
+function Logo({ text }) {
   return (
     <div className="logo">
       <Link className="logo__url" to="/">
@@ -32,10 +33,14 @@ function Logo() {
             </g>
           </g>
         </svg>
-        <h1 className="logo__text">Music App</h1>
+        <h1 className="logo__text">{text}</h1>
       </Link>
     </div>
   );
 }
+
+Logo.propType = {
+  text: PropTypes.string.isRequired,
+};
 
 export default Logo;

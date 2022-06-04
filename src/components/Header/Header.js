@@ -21,7 +21,7 @@ function Header({ theme, onSetTheme }) {
       <div className="container">
         <div className="row middle-xs">
           <div className="header__left col-xs-6">
-            <Logo />
+            <Logo text="Music App" />
           </div>
           <div className="header__right col-xs-6">
             <ThemeButton theme={theme} onClick={handleThemeChange} />
@@ -33,7 +33,7 @@ function Header({ theme, onSetTheme }) {
 }
 
 Header.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.oneOf(['light', 'dark']).isRequired,
   onSetTheme: PropTypes.func.isRequired,
 };
 

@@ -1,3 +1,6 @@
+// Imports
+import PropTypes from 'prop-types';
+
 // imports
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 
@@ -14,7 +17,7 @@ import placeholderImage from '../../utils/images/placeholder.png';
 // Element
 function ArtistCard({ id, image, artistName, listenersCount, playCount }) {
   // State And Router
-  const [currentArtist, setCurrentArtist] = useOutletContext();
+  const [currentArtist, setCurrentArtist] = useOutletContext() || '';
   const navigate = useNavigate();
 
   // Function
@@ -56,5 +59,13 @@ function ArtistCard({ id, image, artistName, listenersCount, playCount }) {
     </div>
   );
 }
+
+ArtistCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  image: PropTypes.array,
+  artistName: PropTypes.string.isRequired,
+  listenersCount: PropTypes.number,
+  playCount: PropTypes.number,
+};
 
 export default ArtistCard;

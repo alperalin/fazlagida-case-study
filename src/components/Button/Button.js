@@ -14,8 +14,7 @@ const Button = forwardRef(
     {
       children,
       variant = 'contained',
-      alignCenter,
-      type,
+      alignCenter = false,
       isLoading = false,
       onClick,
     },
@@ -23,9 +22,9 @@ const Button = forwardRef(
   ) => (
     <button
       ref={ref}
-      className={`button ${
-        alignCenter && 'button--center'
-      } button--${variant} ${type ? 'button--loading' : ''}`}
+      className={`button button--${variant} ${
+        alignCenter ? 'button--center' : ''
+      }`}
       disabled={isLoading}
       onClick={onClick}
     >
@@ -38,7 +37,6 @@ Button.propTypes = {
   children: PropTypes.node,
   variant: PropTypes.oneOf(['contained', 'outlined']),
   alignCenter: PropTypes.bool,
-  type: PropTypes.oneOf(['loading']),
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,
 };

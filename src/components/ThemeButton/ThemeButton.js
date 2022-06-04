@@ -1,5 +1,4 @@
 // Imports
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // Styles
@@ -7,13 +6,12 @@ import './ThemeButton.scss';
 
 // Element
 function ThemeButton({ theme, onClick }) {
-  // const [status, setStatus] = useState(false);
-
+  // Functions
   function handleClick() {
-    // setStatus((prev) => !prev);
     onClick();
   }
 
+  // Render
   return (
     <button
       type="button"
@@ -28,7 +26,7 @@ function ThemeButton({ theme, onClick }) {
 }
 
 ThemeButton.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.oneOf(['light', 'dark']).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
