@@ -14,7 +14,7 @@ import ArtistDetails from './components/ArtistDetails/ArtistDetails';
 import App from './components/App/App';
 
 // Styles
-import './utils/globalStyles/style.scss';
+import './utils/GlobalStyles/style.scss';
 
 // React Query
 const queryClient = new QueryClient({
