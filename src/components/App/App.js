@@ -13,13 +13,12 @@ function App() {
   // States
   const prefersLightMQ = '(prefers-color-scheme: light)';
 
+  // Theme
   const [theme, setTheme] = useState(
-    window.localStorage.getItem('theme') ||
-      window.matchMedia(prefersLightMQ).matches
-      ? 'light'
-      : 'dark' || 'light'
+    window.localStorage.getItem('theme') || 'light'
   );
 
+  // Current Artist
   const [currentArtist, setCurrentArtist] = useState(
     () => JSON.parse(window.localStorage.getItem('currentArtist')) || ''
   );
@@ -56,7 +55,7 @@ function App() {
   // APP
   return (
     <div className="app">
-      <Header onSetTheme={setTheme} />
+      <Header theme={theme} onSetTheme={setTheme} />
       <main className="app__main">
         <div className="container">
           <div className="row">

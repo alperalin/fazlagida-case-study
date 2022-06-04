@@ -3,12 +3,7 @@
 .footer {
   width: 100%;
   font-size: 14px;
-  color: $black;
   text-align: center;
   margin: auto 0 0 0;
   transition: all 500ms ease;
-
-  .dark {
-    color: $white;
-  }
 }

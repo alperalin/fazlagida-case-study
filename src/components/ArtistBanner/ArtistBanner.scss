@@ -16,9 +16,10 @@
   &__name {
     font-size: 28px;
     font-weight: 700;
-    .dark & {
-      color: $black;
-    }
+  }
+
+  .dark & {
+    background-color: $englishViolet;
   }
 
   @media screen and (max-width: $sm-max) {

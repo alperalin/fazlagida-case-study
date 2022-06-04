@@ -9,7 +9,7 @@ import ThemeButton from '../ThemeButton/ThemeButton';
 import './Header.scss';
 
 // Element
-function Header({ onSetTheme }) {
+function Header({ theme, onSetTheme }) {
   // Functions
   function handleThemeChange() {
     onSetTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -24,7 +24,7 @@ function Header({ onSetTheme }) {
             <Logo />
           </div>
           <div className="header__right col-xs-6">
-            <ThemeButton onClick={handleThemeChange} />
+            <ThemeButton theme={theme} onClick={handleThemeChange} />
           </div>
         </div>
       </div>
@@ -33,6 +33,7 @@ function Header({ onSetTheme }) {
 }
 
 Header.propTypes = {
+  theme: PropTypes.string.isRequired,
   onSetTheme: PropTypes.func.isRequired,
 };
 

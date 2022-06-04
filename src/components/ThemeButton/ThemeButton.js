@@ -6,18 +6,18 @@ import PropTypes from 'prop-types';
 import './ThemeButton.scss';
 
 // Element
-function ThemeButton({ onClick }) {
-  const [status, setStatus] = useState(false);
+function ThemeButton({ theme, onClick }) {
+  // const [status, setStatus] = useState(false);
 
   function handleClick() {
-    setStatus((prev) => !prev);
+    // setStatus((prev) => !prev);
     onClick();
   }
 
   return (
     <button
       type="button"
-      className={`themeButton${status ? ' themeButton--opened' : ''}`}
+      className={`themeButton${theme === 'dark' ? ' themeButton--opened' : ''}`}
       onClick={handleClick}
     >
       <span className="themeButton__light">L</span>
@@ -28,6 +28,7 @@ function ThemeButton({ onClick }) {
 }
 
 ThemeButton.propTypes = {
+  theme: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
