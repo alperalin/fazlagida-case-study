@@ -1,3 +1,6 @@
+// Imports
+import PropTypes from 'prop-types';
+
 // Style
 import './List.scss';
 
@@ -10,5 +13,10 @@ function List({ title, children }) {
     </div>
   );
 }
+
+Image.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default List;

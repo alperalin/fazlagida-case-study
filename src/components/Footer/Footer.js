@@ -1,3 +1,6 @@
+// Imports
+import PropTypes from 'prop-types';
+
 // Style
 import './Footer.scss';
 
@@ -9,5 +12,9 @@ function Footer({ text }) {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default Footer;

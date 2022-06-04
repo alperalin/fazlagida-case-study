@@ -1,3 +1,6 @@
+// Imports
+import PropTypes from 'prop-types';
+
 // Components
 import Image from '../Image/Image';
 import Counts from '../Counts/Counts';
@@ -39,5 +42,13 @@ function MediaCard({
     </div>
   );
 }
+
+MediaCard.propTypes = {
+  image: PropTypes.array,
+  mediaName: PropTypes.string.isRequired,
+  artistName: PropTypes.string.isRequired,
+  listenersCount: PropTypes.number,
+  playCount: PropTypes.number,
+};
 
 export default MediaCard;

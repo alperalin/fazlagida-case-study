@@ -44,7 +44,7 @@ function ArtistDetails() {
     <>
       <div className="col-xs-12">
         <ArtistBanner
-          image={currentArtist && currentArtist?.image}
+          imageSrc={currentArtist && currentArtist?.image[2]['#text']}
           artistName={currentArtist?.artistName || decodeURI(artistUrl)}
         />
       </div>
@@ -58,7 +58,7 @@ function ArtistDetails() {
                 image={album.image}
                 mediaName={album.name}
                 artistName={album.artist.name}
-                playCount={album.playcount}
+                playCount={parseInt(album.playcount)}
               />
             ))}
         </List>
@@ -72,8 +72,8 @@ function ArtistDetails() {
                 image={track.image}
                 mediaName={track.name}
                 artistName={track.artist.name}
-                listenersCount={track.listeners}
-                playCount={track.playcount}
+                listenersCount={parseInt(track.listeners)}
+                playCount={parseInt(track.playcount)}
               />
             ))}
         </List>

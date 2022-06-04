@@ -1,4 +1,4 @@
-@import '../../utils/GlobalStyles/variables.scss';
+@import '../../utils/GlobalStyles/_variables.scss';
 
 .button {
   display: block;
@@ -8,7 +8,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
-  color: $buttonTextColor;
+  color: $white;
   text-align: center;
   border: 1px solid $lightCobaltBlue;
   border-radius: $borderRadius;
@@ -28,15 +28,21 @@
   }
 
   &--center {
-    margin: 15px auto 0 auto;
+    margin: 0 auto;
   }
 
   &--outlined {
-    color: $buttonOutlinedTextColor;
+    color: $black;
     background-color: $white;
 
     &:hover {
+      color: $middleBluePurple;
       background-color: $white;
     }
+  }
+
+  // in home page
+  .home & {
+    margin-top: 15px;
   }
 }

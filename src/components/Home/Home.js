@@ -76,11 +76,10 @@ function Home() {
               <ArtistCard
                 key={artist.mbid}
                 id={artist.mbid}
-                imageSrc={artist?.image[1]['#text']}
-                imageSize="small"
+                image={artist?.image}
                 artistName={artist.name}
-                listenersCount={artist.listeners}
-                playCount={artist.playcount}
+                listenersCount={parseInt(artist.listeners)}
+                playCount={parseInt(artist.playcount)}
               />
             </Fragment>
           ))}
@@ -89,7 +88,6 @@ function Home() {
           ref={ref}
           variant="contained"
           alignCenter={true}
-          type="loading"
           isLoading={isFetchingNextPage}
           onClick={fetchNextPage}
         >
