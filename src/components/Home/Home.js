@@ -8,10 +8,11 @@ import { uniqWith, isEqual } from 'lodash';
 import List from '../List/List';
 import ArtistCard from '../ArtistCard/ArtistCard';
 import Button from '../Button/Button';
+import Spinner from '../Spinner/Spinner';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 // API
 import { getTopArtists } from '../../api/endpoints';
-import Spinner from '../Spinner/Spinner';
 
 // Page
 function Home() {
@@ -63,8 +64,7 @@ function Home() {
   if (status === 'loading') return <Spinner />;
 
   // Error
-  if (status === 'error')
-    return <span>{`An error has occurred: ${error.message}`}</span>;
+  if (status === 'error') return <ErrorMessage message={error.message} />;
 
   return (
     <>

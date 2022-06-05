@@ -1,0 +1,8 @@
+@import '../../utils/GlobalStyles/_variables.scss';
+
+.errorMessage {
+  background-color: $red;
+  color: $white;
+  padding: 15px;
+  margin: 15px auto;
+}

@@ -7,6 +7,7 @@ import List from '../List/List';
 import ArtistBanner from '../ArtistBanner/ArtistBanner';
 import MediaCard from '../MediaCard/MediaCard';
 import Spinner from '../Spinner/Spinner';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 // API
 import { getTopAlbums, getTopTracks } from '../../api/endpoints';
@@ -33,13 +34,6 @@ function ArtistDetails() {
 
   if (taIsLoading || ttIsLoading) return <Spinner />;
 
-  if (taIsError || ttIsError)
-    return (
-      <span>{`An error has occurred: ${
-        taError.message || ttError.message
-      }`}</span>
-    );
-
   return (
     <>
       <div className="col-xs-12">
@@ -51,7 +45,10 @@ function ArtistDetails() {
 
       <div className="col-md-6 col-xs-12">
         <List title="Top Albums">
-          {taData?.data?.topalbums.album.length > 0 &&
+          {taIsError ? (
+            <ErrorMessage message={taError.message} />
+          ) : (
+            taData?.data?.topalbums.album.length > 0 &&
             taData.data.topalbums.album.map((album, index) => (
               <MediaCard
                 key={index}
@@ -60,12 +57,16 @@ function ArtistDetails() {
                 artistName={album.artist.name}
                 playCount={parseInt(album.playcount)}
               />
-            ))}
+            ))
+          )}
         </List>
       </div>
       <div className="col-md-6 col-xs-12">
         <List title="Top Tracks">
-          {ttData?.data?.toptracks.track.length > 0 &&
+          {ttIsError ? (
+            <ErrorMessage message={ttIsError.message} />
+          ) : (
+            ttData?.data?.toptracks.track.length > 0 &&
             ttData.data.toptracks.track.map((track, index) => (
               <MediaCard
                 key={index}
@@ -75,7 +76,8 @@ function ArtistDetails() {
                 listenersCount={parseInt(track.listeners)}
                 playCount={parseInt(track.playcount)}
               />
-            ))}
+            ))
+          )}
         </List>
       </div>
     </>
