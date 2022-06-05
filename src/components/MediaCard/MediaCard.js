@@ -26,7 +26,7 @@ function MediaCard({
           className="mediaCard__image"
           size="medium"
           src={image ? image[1]['#text'] : placeholderImage}
-          alt={mediaName}
+          alt={`${artistName} - ${mediaName}`}
         />
         <div className="mediaCard__name-container">
           <h3 className="mediaCard__name">{mediaName}</h3>

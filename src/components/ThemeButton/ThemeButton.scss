@@ -37,9 +37,11 @@
 
   &__light {
     text-align: left;
+    visibility: visible;
 
     .themeButton--opened & {
       opacity: 0;
+      visibility: hidden;
     }
   }
 
@@ -47,9 +49,11 @@
     color: $beige;
     text-align: right;
     opacity: 0;
+    visibility: hidden;
 
     .themeButton--opened & {
       opacity: 1;
+      visibility: visible;
     }
   }
 

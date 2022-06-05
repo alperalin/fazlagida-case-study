@@ -12,6 +12,8 @@ function Logo({ text }) {
       <Link className="logo__url" to="/">
         <svg
           className="logo__icon"
+          aria-label="Site Logo"
+          data-testid="logo-icon"
           width="32px"
           height="32px"
           viewBox="0 0 48 48"
@@ -33,7 +35,9 @@ function Logo({ text }) {
             </g>
           </g>
         </svg>
-        <h1 className="logo__text">{text}</h1>
+        <span className="logo__text" aria-label="Site Name">
+          {text}
+        </span>
       </Link>
     </div>
   );

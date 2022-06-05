@@ -1,17 +1,17 @@
 .image {
   object-fit: contain;
 
-  &-small {
+  &--small {
     max-width: 32px;
     height: 32px;
   }
 
-  &-medium {
+  &--medium {
     max-width: 64px;
     height: 64px;
   }
 
-  &-large {
+  &--large {
     max-width: 128px;
     height: 128px;
   }

@@ -6,7 +6,7 @@ import './Image.scss';
 
 // Element
 function Image({ src, alt, size = 'small', className = '', ...props }) {
-  const sizeClassName = size ? `image-${size}` : '';
+  const sizeClassName = size ? `image--${size}` : '';
 
   return (
     <img
