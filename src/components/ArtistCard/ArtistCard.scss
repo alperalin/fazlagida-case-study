@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   border-bottom: 1px solid $cardBorderColor;
   background-color: $cardBgColor;
   transition: background-color 500ms ease;
@@ -29,12 +30,14 @@
   }
 
   &__title {
-    font-size: 14px;
+    display: block;
+    font-size: 13px;
     font-weight: 700;
+    margin: 0 0 5px 0;
   }
 
   &__name {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &__image {
@@ -69,7 +72,7 @@
     }
 
     &__name {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }

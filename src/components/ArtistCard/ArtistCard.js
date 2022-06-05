@@ -31,7 +31,7 @@ function ArtistCard({ id, image, artistName, listenersCount, playCount }) {
   // Element
   return (
     <div className="artistCard">
-      <div className="artistCard__info col-xs-6">
+      <div className="artistCard__info col-md-8 col-xs-6">
         <Image
           className="artistCard__image"
           size="medium"
@@ -43,7 +43,7 @@ function ArtistCard({ id, image, artistName, listenersCount, playCount }) {
           <h3 className="artistCard__name">{artistName}</h3>
         </div>
       </div>
-      <div className="artistCard__counts col-xs-6">
+      <div className="artistCard__counts col-md-4 col-xs-6">
         {listenersCount && (
           <Counts type="listeners" count={parseInt(listenersCount)} />
         )}
